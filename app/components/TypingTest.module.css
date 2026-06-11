@@ -1,0 +1,290 @@
+.root {
+  background: #0d0d0f;
+  color: #e8e8ec;
+  font-family: 'Space Grotesk', sans-serif;
+  min-height: 100vh;
+  padding: 32px 24px 48px;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.glow {
+  position: fixed;
+  top: -100px; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 300px;
+  background: radial-gradient(ellipse, rgba(0,255,200,0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #00ffc8;
+}
+.logo span { color: #e8e8ec; font-weight: 400; }
+
+.modes { display: flex; gap: 6px; }
+
+.modeBtn {
+  background: transparent;
+  border: 1px solid #2a2a30;
+  color: #777;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+.modeBtn:hover { border-color: #444; color: #aaa; }
+.modeBtn.active { background: #00ffc8; border-color: #00ffc8; color: #0d0d0f; font-weight: 600; }
+
+.diffRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.diffLabel { font-size: 11px; color: #333; margin-right: 4px; }
+
+.diffBtn {
+  background: transparent;
+  border: 1px solid #1e1e26;
+  color: #555;
+  padding: 3px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  transition: all 0.15s;
+}
+.diffBtn:hover { color: #aaa; border-color: #333; }
+.diffActive { border-color: #a78bfa !important; color: #a78bfa !important; }
+
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.stat {
+  background: #111116;
+  border: 1px solid #1e1e26;
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.statVal {
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.wpmVal { color: #00ffc8; }
+.accVal { color: #a78bfa; }
+.streakVal { color: #fbbf24; }
+
+.statLabel {
+  font-size: 10px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.timerBar {
+  height: 3px;
+  background: #1e1e26;
+  border-radius: 2px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.timerFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffc8, #00b4ff);
+  border-radius: 2px;
+  transition: width 0.9s linear;
+}
+
+.wordsArea {
+  background: #111116;
+  border: 1px solid #1e1e26;
+  border-radius: 14px;
+  padding: 24px 22px;
+  margin-bottom: 18px;
+  position: relative;
+  min-height: 130px;
+  cursor: text;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #111116;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 14px;
+  z-index: 2;
+}
+
+.overlayIcon { font-size: 32px; }
+.overlayText { font-size: 14px; color: #666; }
+.overlayHint { font-size: 12px; color: #333; }
+
+.words {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  line-height: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  max-height: 108px;
+  overflow: hidden;
+}
+
+.word { display: inline-flex; position: relative; }
+.currentWord { position: relative; }
+
+.char { color: #333; transition: color 0.05s; }
+.correct { color: #e8e8ec; }
+.wrong { color: #f87171; text-decoration: underline; text-decoration-color: rgba(248,113,113,0.3); }
+
+.cursor { position: relative; }
+.cursor::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 3px; bottom: 3px;
+  width: 2px;
+  background: #00ffc8;
+  border-radius: 1px;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hiddenInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  top: 0; left: 0;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.restartBtn {
+  background: #15151a;
+  border: 1px solid #2a2a30;
+  color: #aaa;
+  padding: 9px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+.restartBtn:hover { border-color: #00ffc8; color: #00ffc8; }
+
+.hint { font-size: 12px; color: #333; }
+
+.resultOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13,13,15,0.97);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.resultTitle { font-size: 12px; color: #555; text-transform: uppercase; letter-spacing: 0.12em; }
+
+.resultWpm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 80px;
+  font-weight: 700;
+  color: #00ffc8;
+  line-height: 1;
+}
+
+.resultWpmLabel { font-size: 13px; color: #555; margin-top: -10px; }
+
+.resultGrid { display: flex; gap: 40px; margin: 4px 0; }
+.resultItem { text-align: center; }
+
+.resultItemVal {
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+  color: #fff;
+}
+
+.resultItemLabel { font-size: 11px; color: #444; margin-top: 3px; }
+
+.resultGrade {
+  font-size: 13px;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.tryAgain {
+  background: #00ffc8;
+  border: none;
+  color: #0d0d0f;
+  padding: 12px 36px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+.tryAgain:hover { opacity: 0.85; }
+
+@media (max-width: 600px) {
+  .root { padding: 20px 16px 40px; }
+  .statsRow { grid-template-columns: repeat(2, 1fr); }
+  .statVal { font-size: 22px; }
+  .words { font-size: 16px; }
+  .resultWpm { font-size: 60px; }
+  .resultGrid { gap: 24px; }
+  .modes { gap: 4px; }
+  .modeBtn { padding: 5px 12px; font-size: 12px; }
+}
