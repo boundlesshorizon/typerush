@@ -41,7 +41,7 @@ export const metadata = {
     canonical: 'https://typerush.app'
   },
   verification: {
-    google: 'REPLACE_WITH_YOUR_GOOGLE_VERIFICATION_CODE'
+    google: 'abc123xyz...'
   }
 }
 
