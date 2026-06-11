@@ -41,7 +41,7 @@ export const metadata = {
     canonical: 'https://typerush-blond.vercel.app'
   },
   verification: {
-    google: 'google4dadba5425718e59'
+    google: '1S6vd5Do9HhTT_lOPQ2ud1DfDeG6XIHVHaWjOsm6a8Q'
   }
 }
 
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="google4dadba5425718e59" />
+        <meta name="google-site-verification" content="1S6vd5Do9HhTT_lOPQ2ud1DfDeG6XIHVHaWjOsm6a8Q" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
