@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  metadataBase: new URL('https://typerush.app'),
+  metadataBase: new URL('https://typerush-blond.vercel.app'),
   title: {
     default: 'TypeRush — Free Typing Speed Test | WPM Test Online',
     template: '%s | TypeRush'
@@ -25,7 +25,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://typerush.app',
+    url: 'https://typerush-blond.vercel.app',
     siteName: 'TypeRush',
     title: 'TypeRush — Free Typing Speed Test | WPM Test Online',
     description: 'Test your typing speed for free. Real-time WPM, accuracy, streaks. Multiple difficulty levels including code mode.',
@@ -38,10 +38,10 @@ export const metadata = {
     images: ['/og-image.png']
   },
   alternates: {
-    canonical: 'https://typerush.app'
+    canonical: 'https://typerush-blond.vercel.app'
   },
   verification: {
-    google: google4dadba5425718e59.html
+    google: 'google4dadba5425718e59'
   }
 }
 
@@ -49,7 +49,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
+        <meta name="google-site-verification" content="google4dadba5425718e59" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -63,7 +63,7 @@ export default function RootLayout({ children }) {
               "@type": "WebApplication",
               "name": "TypeRush",
               "description": "Free online typing speed test with real-time WPM, accuracy tracking, streaks, and multiple difficulty levels including code mode.",
-              "url": "https://typerush.app",
+              "url": "https://typerush-blond.vercel.app",
               "applicationCategory": "UtilitiesApplication",
               "operatingSystem": "Any",
               "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
