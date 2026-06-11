@@ -41,7 +41,7 @@ export const metadata = {
     canonical: 'https://typerush.app'
   },
   verification: {
-    google: 'abc123xyz...'
+    google: google4dadba5425718e59.html
   }
 }
 
@@ -49,6 +49,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
